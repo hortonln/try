@@ -1,3 +1,10 @@
+/**
+* This class contains everything for GIU and Trivia
+* @author Jiun Kim, Angela Lopez, Lauren Horton
+* @version 12.8.2020
+*/
+
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -35,7 +42,18 @@ ArrayList <Question> triviaQuestions = new ArrayList<Question>();
 //ArrayList<Question> triviaQuestions;
  
 
+void NextQuestion(){
+  
+  int i = 0;   
+  if (i < triviaQuestions.size()) {
+    i++;
+    
+	System.out.println(triviaQuestions.get(i).getQuestion());
+  }
 
+  else {}
+
+}
 
 Game(){
 
@@ -103,10 +121,13 @@ JFrame frame = new JFrame("Spanish Trivia");
 	frame.setLayout(new FlowLayout());
   frame.setSize(400, 350);
 
-jRadioButton1 = new JRadioButton(option1);
-jRadioButton2 = new JRadioButton(option2);
-jRadioButton3 = new JRadioButton(option3);
-jRadioButton4 = new JRadioButton(option4);
+  frame.getContentPane().setBackground(Color.GRAY);
+  
+
+jRadioButton1 = new JRadioButton(triviaQuestions.get(0).getOption1());
+jRadioButton2 = new JRadioButton(triviaQuestions.get(0).getOption2());
+jRadioButton3 = new JRadioButton(triviaQuestions.get(0).getOption3());
+jRadioButton4 = new JRadioButton(triviaQuestions.get(0).getOption4());
 
 group = new ButtonGroup();
 group.add(jRadioButton1);
@@ -117,14 +138,28 @@ group.add(jRadioButton4);
 submit = new JButton("Submit Answer");
 nextButton = new JButton("Continue");
 
+
 submit.addActionListener(this);
 nextButton.addActionListener(this);
 
 
 welcome = new JLabel("Welcome to Spanish Trivia");
+
+welcome.setFont(new Font("SanSerif", Font.BOLD, 20));
+welcome.setForeground(Color.BLUE);
+
 totalScore = new JLabel("Total Points: " + points);
-prompt = new JLabel(question);
+
+totalScore.setFont(new Font("Monospaced", Font.ITALIC, 30));
+totalScore.setForeground(Color.GREEN);
+
+JLabel html = new JLabel("<html><br><br>I am <font color='green' size='30'>blue</font></html>");
+
+prompt = new JLabel(triviaQuestions.get(0).getQuestion());
 response = new JLabel("");
+
+
+
 
 frame.add(welcome);
 frame.add(totalScore);
@@ -141,37 +176,18 @@ frame.add(nextButton);
 
 frame.setVisible(true);
 //frame.getContentPane().removeAll();
-//frame.repaint();
+//frame.repaint(); 
 
 }
 
-void NextQuestion(){
-  
-  //triviaQuestions = new ArrayList<Question>();
-  int i = 0;   
-  
-  if (i < triviaQuestions.size()) {
-    i++;
-	System.out.println(triviaQuestions.get(i));
-  }
 
-  else {
-    
-  }
-
-
-}
 
 public void actionPerformed(ActionEvent ae) 
 {
-
-
   int option1 = 1;
   int option2 = 2;
   int option3 = 3;
   int option4 = 4;
-
-
 
   if(ae.getActionCommand().equals("Submit Answer"))
     {
@@ -246,8 +262,10 @@ public void actionPerformed(ActionEvent ae)
 
     NextQuestion();
 
-    //frame.setVisible(false);
+    //Game().prompt.setText(triviaQuestions.get(1).getQuestion());
+   // frame.setVisible(false);
     //frame.getContentPane().removeAll();
+    //Game.frame.repaint();
 
 
    } 

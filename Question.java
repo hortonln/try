@@ -1,3 +1,11 @@
+/**
+* This class print out a Questions.
+* @author Jiun Kim, Angela Lopez, Lauren Horton
+* @version 12.8.2020
+*/
+
+/**Declare instance variables*/
+
 class Question{
 
 public String question;
@@ -8,6 +16,11 @@ public String option4;
 public static int correctAnswer;
 public static int points; 
 
+
+/**
+* This is a counstructor
+* @param
+*/
 Question(String theQuestion, String anOption1, String anOption2, String anOption3, String anOption4, int theCorrectAnswer, int thePoints) {
   question = theQuestion;
   option1 = anOption1;
@@ -17,6 +30,12 @@ Question(String theQuestion, String anOption1, String anOption2, String anOption
   correctAnswer = theCorrectAnswer;
   points = thePoints;
 }
+
+/**
+* This method is an accessor method.
+* This method returns a question to the user.
+* @return getQuestion (The value input as a String).
+*/
 
 String getQuestion(){
   return question;

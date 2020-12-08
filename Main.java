@@ -1,9 +1,8 @@
-/*triviaQuestions.add(0, "What country has the largest waterfall in the world?");
-triviaQuestions.add(1,"What is the Capital of Brazil?");
-triviaQuestions.add(2,"What city has the most Spanish speakers in the United States?");
-triviaQuestions.add(3,"What country does not have yellow in its flag?");
-triviaQuestions.add(4,"Each country is an island except?");
-triviaQuestions.add(5,"In how many countries is Spanish the official language?")*/
+/**
+* This class is the Main java. This program is a model for GUI for Spanish Trivia Question
+* @author Jiun Kim, Angela Lopez, Lauren Horton
+* @version 12.8.2020
+*/
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
